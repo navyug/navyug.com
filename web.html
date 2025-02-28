@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Compatibility Test</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            padding: 50px;
+        }
+        #result {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Love Compatibility Calculator ❤️</h2>
+    <p>Enter your names to check your compatibility:</p>
+    <input type="text" id="name1" placeholder="Your Name">
+    <input type="text" id="name2" placeholder="Partner's Name">
+    <button onclick="calculateLove()">Calculate</button>
+    <p id="loading" style="display:none;">Calculating... ❤️💔</p>
+    <p id="result"></p>
+    
+    <script>
+        function calculateLove() {
+            document.getElementById("loading").style.display = "block";
+            document.getElementById("result").style.display = "none";
+            
+            setTimeout(() => {
+                document.getElementById("loading").style.display = "none";
+                let result = Math.random() > 0.5 ? "0% - Your GF is cheating! 😱💔" : "5% - Time to move on! 😢";
+                document.getElementById("result").innerText = result;
+                document.getElementById("result").style.display = "block";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
